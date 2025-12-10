@@ -1,5 +1,5 @@
 import { useFonts } from 'expo-font';
-import { Slot } from 'expo-router';
+import { Slot, Stack } from 'expo-router';
 import React from 'react';
 import "./global.css";
 
@@ -11,8 +11,12 @@ const RootLayout = () => {
   });
 
   return (
-    <Slot />
-  )
+    <Stack screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="(auth)" />
+
+      <Stack.Screen name="(drawer)" />
+    </Stack>
+  );
 }
 
 export default RootLayout
